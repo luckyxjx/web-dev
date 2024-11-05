@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import Head from 'next/head'; // Import Head from next/head
 
 export const metadata = {
   title: "Create Next App",
@@ -9,10 +10,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+        {/* Include your stylesheet link here */}
+        <link 
+          rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+          integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
+          crossOrigin="anonymous" 
+          referrerPolicy="no-referrer" 
+        />
+      </Head>
       <body>
         {children}
       </body>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </html>
   );
 }
